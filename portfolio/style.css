@@ -793,3 +793,230 @@ nav ul li a.active {
 html {
     scroll-behavior: smooth;
 }
+/* ============= IMPROVED MOBILE RESPONSIVE (Replace old @media) ============= */
+
+@media (max-width: 992px) {
+    /* Tablet এর জন্য কিছু adjustment */
+    .hero-content {
+        gap: 40px;
+    }
+    
+    .profile-image img {
+        width: 220px;
+        height: 220px;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .about-content {
+        text-align: center;
+    }
+    
+    .about-intro, .about-closing {
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hamburger already showing - ensure smooth */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0f172a;
+        flex-direction: column;
+        padding: 30px 0;
+        display: none;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 12px 0;
+        text-align: center;
+    }
+
+    /* Projects button mobile-এ সুন্দর দেখানোর জন্য */
+    .nav-menu li a.project-circle {
+        display: inline-block;
+        margin: 15px auto;
+        padding: 12px 28px;
+        font-size: 1.1rem;
+    }
+
+    /* Hero Section */
+    h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .profile-image img {
+        width: 180px;
+        height: 180px;
+        border-width: 5px;
+    }
+
+    .hero-text p {
+        font-size: 1.05rem;
+    }
+
+    /* Section padding কমানো */
+    .section {
+        padding: 80px 0;
+    }
+
+    /* Headings */
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    /* Cards */
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 20px;
+    }
+
+    .updates-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .update-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .update-icon {
+        margin: 0 auto;
+    }
+
+    /* Education cards */
+    .education-card {
+        padding-top: 70px;
+    }
+
+    .edu-logo {
+        width: 60px;
+        height: 60px;
+        top: -30px;
+    }
+
+    /* Timeline - mobile-এ left aligned */
+    .timeline::before {
+        left: 25px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 20px;
+        text-align: left !important;
+        margin-bottom: 40px;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0 !important;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-icon,
+    .timeline-item:nth-child(even) .timeline-icon {
+        left: 0;
+        right: auto;
+    }
+
+    /* Skills */
+    .skills-category {
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .skill-badges {
+        justify-content: center;
+    }
+
+    .badge {
+        font-size: 0.95rem;
+        padding: 8px 16px;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .social-links a {
+        font-size: 1.1rem;
+    }
+}
+
+/* Extra Small Phones (iPhone SE, old Android) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .profile-image img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .nav-menu li a.project-circle {
+        padding: 10px 22px;
+        font-size: 1rem;
+    }
+
+    .card, .update-card {
+        padding: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 70px;
+    }
+
+    .timeline-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
