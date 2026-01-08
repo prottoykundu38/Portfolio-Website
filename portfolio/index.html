@@ -8,10 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" data-aos="fade-down" data-aos-duration="800">
         <div class="nav-container">
             <h2 class="nav-logo">Portfolio</h2>
             <ul class="nav-menu">
@@ -19,7 +21,10 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#updates">Updates</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li>
+  <a href="#projects" class="project-circle">Projects</a>
+</li>
+
                 <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#research">Research</a></li>
@@ -35,10 +40,10 @@
     <!-- Hero Section -->
     <section id="home" class="section hero">
         <div class="container hero-content">
-            <div class="profile-image">
+            <div class="profile-image" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                 <img src="images/my.jpg" alt="Prottoy Kundu">
             </div>
-            <div class="hero-text">
+            <div class="hero-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
                 <h1>Hello, my name is <span>Prottoy Kundu</span></h1>
                 <p>I'm a passionate Flutter Developer</p>
                 <p>Delivering clean code, pixel-perfect designs, interactive animations, and responsive websites/apps accessible across devices.</p>
@@ -49,27 +54,27 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container about-container">
-            <h2>About Me</h2>
+            <h2 data-aos="fade-up" data-aos-duration="800">About Me</h2>
             <div class="about-content">
-                <p class="about-intro">As a dedicated Flutter Developer and Problem Solver, I specialize in crafting high-quality mobile applications with a strong emphasis on intuitive UI/UX design. With a foundation in Computer Science and Engineering, I bring a blend of technical expertise and creative innovation to every project.</p>
+                <p class="about-intro" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">As a dedicated Flutter Developer and Problem Solver, I specialize in crafting high-quality mobile applications with a strong emphasis on intuitive UI/UX design. With a foundation in Computer Science and Engineering, I bring a blend of technical expertise and creative innovation to every project.</p>
                 <div class="about-highlights">
-                    <div class="highlight-item">
+                    <div class="highlight-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                         <i class="fas fa-code"></i>
                         <h4>Expert in Cross-Platform Development</h4>
                         <p>Building seamless Android and iOS apps using Flutter, ensuring performance and user satisfaction.</p>
                     </div>
-                    <div class="highlight-item">
+                    <div class="highlight-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                         <i class="fas fa-lightbulb"></i>
                         <h4>Innovative Problem Solver</h4>
                         <p>Excelling in competitive programming, I apply algorithmic thinking to real-world challenges.</p>
                     </div>
-                    <div class="highlight-item">
+                    <div class="highlight-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
                         <i class="fas fa-rocket"></i>
                         <h4>Committed to Excellence</h4>
                         <p>Focused on delivering scalable, maintainable code with pixel-perfect interfaces and smooth animations.</p>
                     </div>
                 </div>
-                <p class="about-closing">My goal is to create impactful digital experiences that solve problems and delight users. Let's collaborate to bring your ideas to life!</p>
+                <p class="about-closing" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">My goal is to create impactful digital experiences that solve problems and delight users. Let's collaborate to bring your ideas to life!</p>
             </div>
         </div>
     </section>
@@ -77,16 +82,16 @@
     <!-- Recent Updates - Professional Card Style -->
     <section id="updates" class="section alt-bg">
         <div class="container">
-            <h2>Recent Updates</h2>
+            <h2 data-aos="fade-up" data-aos-duration="800">Recent Updates</h2>
             <div class="updates-grid">
-                <div class="update-card">
+                <div class="update-card" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
                     <div class="update-icon"><i class="fas fa-graduation-cap"></i></div>
                     <div class="update-content">
                         <h4>Flutter Learning</h4>
                         <p>Currently focusing on advanced Flutter concepts for cross-platform Android and iOS development.</p>
                     </div>
                 </div>
-                <div class="update-card">
+                <div class="update-card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
                     <div class="update-icon"><i class="fas fa-code"></i></div>
                     <div class="update-content">
                         <h4>Competitive Programming</h4>
@@ -103,21 +108,21 @@
     <!-- Education -->
     <section id="education" class="section">
         <div class="container">
-            <h2>Education</h2>
+            <h2 data-aos="fade-up" data-aos-duration="800">Education</h2>
             <div class="card-grid">
-                <div class="card education-card">
+                <div class="card education-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
                     <img src="images/diu.svg" alt="DIU Logo" class="edu-logo">
                     <h3>B.Sc. in Computer Science & Engineering</h3>
                     <p>Daffodil International University (2022–2025)</p>
                     <p>CGPA: 3.90/4.00</p>
                 </div>
-                <div class="card education-card">
+                <div class="card education-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="400">
                     <img src="images/ssnic.svg" alt="SSNIC Logo" class="edu-logo">
                     <h3>Higher Secondary Certificate (H.S.C.)</h3>
                     <p>Shahid Sayed Nazrul Islam College (2019–2020)</p>
                     <p>GPA: 5.00/5.00 (Golden A+), Science background</p>
                 </div>
-                <div class="card education-card">
+                <div class="card education-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="600">
                     <img src="images/n.jpg" alt="Nabarun Logo" class="edu-logo">
                     <h3>Secondary School Certificate (S.S.C.)</h3>
                     <p>Nabarun Biddya Niketon, Muktagacha, Mymensingh (2017–2018)</p>
@@ -130,34 +135,34 @@
     <!-- Projects -->
     <section id="projects" class="section alt-bg">
         <div class="container">
-            <h2>Projects</h2>
+            <h2 data-aos="fade-up" data-aos-duration="800">Projects</h2>
             <div class="card-grid">
-                <div class="card">
+                <div class="card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
                     <h3>Crafty Bay</h3>
                     <p>E-commerce app (Flutter + GetX)</p>
                     <a href="https://github.com/prottoykundu38/Ostad_Flutter_Batch_10/tree/E-commerce-app" target="_blank">GitHub/Live</a>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
                     <h3>Phyra</h3>
                     <p>Student Mental health Platform (PHP + JavaScript + DB)</p>
                     <a href="https://github.com/prottoykundu38/Phyra-Website.git" target="_blank">GitHub</a>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
                     <h3>Todo List App</h3>
                     <p>Task management with categories, progress tracking, reports (Flutter + GetX)</p>
                     <a href="https://github.com/prottoykundu38/Task_Manager" target="_blank">GitHub</a>
                 </div>
-                <div class="card">
-                    <h3>Virtual Pdf Printer</h3>
-                    <p>A virtual PDF printer is a software tool that creates PDF files by printing documents digitally instead of on paper.</p>
-                    <a href="https://github.com/prottoykundu38/Virtual_PDF_Printer.git" target="_blank">GitHub</a>
+                <div class="card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+                    <h3>Enventure</h3>
+                    <p>Eventure is a Flutter-based university event tracking app that keeps students informed about all academic and campus events in one centralized platform.</p>
+                    <a href="" target="_blank">GitHub</a>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
                     <h3>Basic Calculator App</h3>
                     <p>A Flutter app for basic arithmetic calculations.</p>
                     <a href="https://github.com/prottoykundu38/Flutter_Project_Calculator_App_Basic.git" target="_blank">GitHub</a>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="600">
                     <h3>Breaking Bricks</h3>
                     <p>Brick-breaker game (Core Java + OOP)</p>
                     <a href="https://github.com/prottoykundu38/Breaking-Brick.git" target="_blank">GitHub</a>
@@ -169,9 +174,9 @@
     <!-- Achievements Timeline -->
     <section id="achievements" class="section">
         <div class="container">
-            <h2>Contests & Achievements</h2>
+            <h2 data-aos="fade-up" data-aos-duration="800">Achievements</h2>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
                     <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
                     <div class="timeline-content">
                         <h3>ICPC Asia Dhaka Regional</h3>
@@ -179,7 +184,7 @@
                         <p>Participated in the prestigious International Collegiate Programming Contest (ICPC) Asia Dhaka Regional.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
                     <div class="timeline-icon"><i class="fas fa-medal"></i></div>
                     <div class="timeline-content">
                         <h3>Multiple DIU Intra-University Contests</h3>
@@ -187,7 +192,7 @@
                         <p>Consistently participated and ranked in top positions in Daffodil International University programming contests.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-right" data-aos-duration="800" data-aos-delay="600">
                     <div class="timeline-icon"><i class="fas fa-code"></i></div>
                     <div class="timeline-content">
                         <h3>Active Competitive Programmer</h3>
@@ -202,8 +207,8 @@
     <!-- Skills -->
     <section id="skills" class="section alt-bg">
         <div class="container">
-            <h2>Skills & Proficiencies</h2>
-            <div class="skills-category">
+            <h2 data-aos="fade-up" data-aos-duration="800">Skills & Proficiencies</h2>
+            <div class="skills-category" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <h3>Core Expertise</h3>
                 <div class="skill-badges">
                     <span class="badge">Flutter Developer</span>
@@ -212,31 +217,31 @@
                 </div>
             </div>
 
-            <div class="skills-category">
+            <div class="skills-category" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                 <h3>Programming Languages</h3>
                 <div class="skill-bar">
                     <div class="skill-info"><span>C / C++</span><span>85%</span></div>
-                    <div class="bar"><div class="progress" style="width: 85%;"></div></div>
+                    <div class="bar"><div class="progress" style="width: 0%;"></div></div>
                 </div>
                 <div class="skill-bar">
                     <div class="skill-info"><span>Python</span><span>80%</span></div>
-                    <div class="bar"><div class="progress" style="width: 80%;"></div></div>
+                    <div class="bar"><div class="progress" style="width: 0%;"></div></div>
                 </div>
                 <div class="skill-bar">
                     <div class="skill-info"><span>JavaScript</span><span>90%</span></div>
-                    <div class="bar"><div class="progress" style="width: 90%;"></div></div>
+                    <div class="bar"><div class="progress" style="width: 0%;"></div></div>
                 </div>
                 <div class="skill-bar">
                     <div class="skill-info"><span>Dart (Flutter)</span><span>95%</span></div>
-                    <div class="bar"><div class="progress" style="width: 95%;"></div></div>
+                    <div class="bar"><div class="progress" style="width: 0%;"></div></div>
                 </div>
                 <div class="skill-bar">
                     <div class="skill-info"><span>Java</span><span>75%</span></div>
-                    <div class="bar"><div class="progress" style="width: 75%;"></div></div>
+                    <div class="bar"><div class="progress" style="width: 0%;"></div></div>
                 </div>
             </div>
 
-            <div class="skills-category">
+            <div class="skills-category" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                 <h3>Tools & Technologies</h3>
                 <div class="skill-badges">
                     <span class="badge">Git & GitHub</span>
@@ -254,14 +259,14 @@
     <!-- Research -->
     <section id="research" class="section">
         <div class="container">
-            <h2>Research & Publications</h2>
+            <h2 data-aos="fade-up" data-aos-duration="800">Research & Publications</h2>
             <div class="card-grid">
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <h3>CarambolaCam</h3>
                     <p>Hybrid graph-based deep learning framework (GCN + GAT) for carambola leaf/fruit disease classification</p>
                     <p>Co-authored paper.</p>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                     <h3>EndoVision</h3>
                     <p>A Hybrid Deep Learning Framework for Endoscopic Image Classification</p>
                     <p>First Authored Paper</p>
@@ -271,7 +276,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
@@ -293,14 +298,75 @@
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        // Animation প্রতিবার স্ক্রলে হবে (উপরে-নিচে দুদিকেই)
+        once: false,
+        mirror: true,        // উপরে স্ক্রল করলেও animation হবে
+        duration: 800,
+        easing: 'ease-out',
+        offset: 100,         // একটু আগে থেকে শুরু হবে (স্মুথ ফিল)
+        delay: 0
+    });
 
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Skill bars animate every time on scroll
+    const skillBars = document.querySelectorAll('.progress');
+    const animateSkills = () => {
+        skillBars.forEach(bar => {
+            const parent = bar.parentElement.parentElement;
+            const rect = parent.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const width = bar.parentElement.previousElementSibling.querySelector('span:last-child').textContent;
+                bar.style.width = width;
+                bar.style.transition = 'width 1.5s ease-in-out';
+            } else {
+                // যখন স্ক্রল করে দূরে চলে যাবে, তখন আবার 0% করে দিবে (যাতে আবার আসলে animate হয়)
+                bar.style.width = '0%';
+            }
+        });
+    };
+
+    window.addEventListener('scroll', animateSkills);
+    animateSkills(); // Initial check
+</script>
+
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({
+            once: true, // Animation শুধু একবার হবে
+            duration: 800,
+            easing: 'ease-out'
+        });
+
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
-    </script>
+
+        // Skill bars animate on scroll
+        const skillBars = document.querySelectorAll('.progress');
+        const animateSkills = () => {
+            skillBars.forEach(bar => {
+                const parent = bar.parentElement.parentElement;
+                const rect = parent.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const width = bar.parentElement.previousElementSibling.querySelector('span:last-child').textContent;
+                    bar.style.width = width;
+                }
+            });
+        };
+        window.addEventListener('scroll', animateSkills);
+        animateSkills(); // Page load-এ চেক
+    </script> -->
 </body>
 </html>

@@ -737,3 +737,9 @@ html {
 .update-card:hover .update-icon {
     transform: scale(1.1) rotate(10deg);
 }
+nav ul li a.active {
+  color: #2563eb;
+  font-weight: 700;
+  border-bottom: 3px solid #2563eb;
+  padding-bottom: 6px;
+}
