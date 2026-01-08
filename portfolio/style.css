@@ -21,10 +21,15 @@ body {
     padding: 100px 0;
     text-align: center;
     transition: background-color 0.5s ease;
+    scroll-margin-top: 120px;
 }
 
 .alt-bg {
     background-color: #1e293b;
+}
+
+#home, #about, #updates, #education, #projects, #achievements, #skills, #research {
+    scroll-margin-top: 120px;
 }
 
 h1, h2, h3, h4 {
@@ -142,7 +147,7 @@ a:hover {
     width: 100%;
 }
 
-/* ====== FINAL: Special Highlight for Projects Link ====== */
+/* FIXED: Projects Button - No overflow reflection, perfect click area */
 .nav-menu li a.project-circle {
     background: linear-gradient(135deg, #0ea5e9, #38bdf8);
     color: white !important;
@@ -150,14 +155,16 @@ a:hover {
     border-radius: 50px;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
     line-height: 1.4;
+    isolation: isolate; /* এটা যোগ করলাম — shine effect অন্য element-এ affect করবে না */
+    z-index: 1; /* নিশ্চিত করলাম Projects সবার উপরে */
 }
 
 .nav-menu li a.project-circle::after {
-    display: none !important; /* underline effect বন্ধ */
+    display: none !important;
 }
 
 .nav-menu li a.project-circle::before {
@@ -167,27 +174,25 @@ a:hover {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.6s;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.7s ease;
+    pointer-events: none; /* shine ক্লিক interfere করবে না */
+    z-index: -1; /* shine টা background-এর পিছনে রাখলাম */
 }
 
 .nav-menu li a.project-circle:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.6);
-    color: white !important;
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4); /* shadow same রাখলাম */
 }
 
 .nav-menu li a.project-circle:hover::before {
     left: 100%;
 }
 
-/* Mobile fix for Projects button */
-@media (max-width: 768px) {
-    .nav-menu li a.project-circle {
-        display: inline-block;
-        margin: 15px auto;
-        width: fit-content;
-    }
+/* Extra safety: অন্য লিঙ্কগুলোর z-index ও spacing */
+.nav-menu li {
+    position: relative;
+    z-index: 0;
 }
 
 .hamburger {
@@ -204,7 +209,7 @@ a:hover {
     transition: 0.3s;
 }
 
-/* Hero with Profile Image */
+/* Hero */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -250,9 +255,10 @@ a:hover {
     opacity: 1;
 }
 
-/* About Section */
+/* About */
 .about-container {
     max-width: 900px;
+    margin: 0 auto;
 }
 
 .about-content {
@@ -339,7 +345,7 @@ a:hover {
     transform: translateY(-3px);
 }
 
-/* Education Logos */
+/* Education */
 .education-card {
     position: relative;
     padding-top: 80px;
@@ -365,7 +371,7 @@ a:hover {
     transform: translateX(-50%) scale(1.1);
 }
 
-/* Achievements Timeline */
+/* Timeline */
 .timeline {
     position: relative;
     max-width: 900px;
@@ -442,7 +448,6 @@ a:hover {
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    position: relative;
     transition: box-shadow 0.3s;
 }
 
@@ -463,7 +468,7 @@ a:hover {
     margin-bottom: 12px;
 }
 
-/* Skills Section */
+/* Skills */
 .skills-category {
     margin-bottom: 50px;
     text-align: left;
@@ -530,6 +535,7 @@ a:hover {
     height: 100%;
     background: linear-gradient(90deg, #0ea5e9, #38bdf8);
     border-radius: 6px;
+    width: 0%;
     transition: width 1.5s ease-in-out, box-shadow 0.3s;
 }
 
@@ -537,7 +543,7 @@ a:hover {
     box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
 }
 
-/* Recent Updates */
+/* Updates */
 .updates-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -582,8 +588,7 @@ a:hover {
     font-size: 1.3rem;
 }
 
-.update-content p, 
-.update-content ul {
+.update-content p, .update-content ul {
     color: #e2e8f0;
     font-size: 1.05rem;
     line-height: 1.5;
@@ -602,17 +607,12 @@ a:hover {
     transform: scale(1.1) rotate(10deg);
 }
 
-/* Footer */
+/* Footer - Social links পাশাপাশি */
 .footer {
     background-color: #020617;
     padding: 60px 0 30px;
     margin-top: 50px;
     border-top: 1px solid #1e293b;
-    transition: background-color 0.5s;
-}
-
-.footer:hover {
-    background-color: #0f172a;
 }
 
 .footer-content {
@@ -634,32 +634,31 @@ a:hover {
 }
 
 .footer-right p {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-weight: 500;
+    font-size: 1.2rem;
+    color: #e2e8f0;
 }
 
 .social-links {
     display: flex;
-    gap: 25px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .social-links a {
     color: #e2e8f0;
     font-weight: 500;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     transition: all 0.3s;
-    position: relative;
 }
 
-.social-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -3px;
-    left: 0;
-    background-color: #38bdf8;
-    transition: width 0.3s;
+.social-links a i {
+    font-size: 1.5rem;
+    transition: all 0.3s;
 }
 
 .social-links a:hover {
@@ -667,8 +666,9 @@ a:hover {
     transform: translateY(-3px);
 }
 
-.social-links a:hover::after {
-    width: 100%;
+.social-links a:hover i {
+    color: #38bdf8;
+    transform: scale(1.2);
 }
 
 .footer-bottom {
@@ -679,155 +679,32 @@ a:hover {
     font-size: 0.95rem;
 }
 
-nav ul li a.active {
-    color: #2563eb;
-    font-weight: 700;
-    border-bottom: 3px solid #2563eb;
-    padding-bottom: 6px;
-}
-
 /* Responsive */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #0f172a;
-        flex-direction: column;
-        padding: 20px;
-        display: none;
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .profile-image img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .edu-logo {
-        width: 60px;
-        height: 60px;
-        top: -30px;
-    }
-
-    .education-card {
-        padding-top: 70px;
-    }
-
-    .timeline::before {
-        left: 25px;
-    }
-
-    .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 20px;
-        text-align: left !important;
-    }
-
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-        left: 0 !important;
-    }
-
-    .timeline-item:nth-child(odd) .timeline-icon {
-        left: 0;
-        right: auto;
-    }
-
-    .timeline-item:nth-child(even) .timeline-icon {
-        left: 0;
-    }
-
-    .skills-category {
-        text-align: center;
-    }
-
-    .about-content {
-        text-align: center;
-    }
-
-    .about-highlights {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-}
-
-html {
-    scroll-behavior: smooth;
-}
-/* ============= IMPROVED MOBILE RESPONSIVE (Replace old @media) ============= */
-
 @media (max-width: 992px) {
-    /* Tablet এর জন্য কিছু adjustment */
     .hero-content {
         gap: 40px;
     }
-    
     .profile-image img {
         width: 220px;
         height: 220px;
     }
-    
     h1 {
         font-size: 3rem;
     }
-    
     .about-content {
         text-align: center;
     }
-    
     .about-intro, .about-closing {
         text-align: center;
         max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
     }
-    
     .about-highlights {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
-    /* Hamburger already showing - ensure smooth */
     .hamburger {
         display: flex;
     }
@@ -853,7 +730,6 @@ html {
         text-align: center;
     }
 
-    /* Projects button mobile-এ সুন্দর দেখানোর জন্য */
     .nav-menu li a.project-circle {
         display: inline-block;
         margin: 15px auto;
@@ -861,7 +737,6 @@ html {
         font-size: 1.1rem;
     }
 
-    /* Hero Section */
     h1 {
         font-size: 2.5rem;
         line-height: 1.2;
@@ -879,29 +754,17 @@ html {
         border-width: 5px;
     }
 
-    .hero-text p {
-        font-size: 1.05rem;
-    }
-
-    /* Section padding কমানো */
     .section {
         padding: 80px 0;
     }
 
-    /* Headings */
     h2 {
         font-size: 2.2rem;
     }
 
-    /* Cards */
-    .card-grid {
+    .card-grid, .updates-grid {
         grid-template-columns: 1fr;
         gap: 25px;
-        padding: 0 20px;
-    }
-
-    .updates-grid {
-        grid-template-columns: 1fr;
         padding: 0 20px;
     }
 
@@ -915,7 +778,6 @@ html {
         margin: 0 auto;
     }
 
-    /* Education cards */
     .education-card {
         padding-top: 70px;
     }
@@ -926,7 +788,6 @@ html {
         top: -30px;
     }
 
-    /* Timeline - mobile-এ left aligned */
     .timeline::before {
         left: 25px;
     }
@@ -950,22 +811,11 @@ html {
         right: auto;
     }
 
-    /* Skills */
     .skills-category {
         text-align: center;
         padding: 0 20px;
     }
 
-    .skill-badges {
-        justify-content: center;
-    }
-
-    .badge {
-        font-size: 0.95rem;
-        padding: 8px 16px;
-    }
-
-    /* Footer */
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -974,15 +824,10 @@ html {
 
     .social-links {
         justify-content: center;
-        gap: 20px;
-    }
-
-    .social-links a {
-        font-size: 1.1rem;
+        gap: 25px;
     }
 }
 
-/* Extra Small Phones (iPhone SE, old Android) */
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
@@ -1019,4 +864,20 @@ html {
         height: 45px;
         font-size: 1.3rem;
     }
+
+    .social-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav ul li a.active {
+    color: #2563eb;
+    font-weight: 700;
+    border-bottom: 3px solid #2563eb;
+    padding-bottom: 6px;
 }
